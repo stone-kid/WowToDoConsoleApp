@@ -6,7 +6,11 @@ public abstract class TodoBase{
     private String name;
     private Date completeData;
 
+    protected TodoTypes type;
+
     protected TodoBase(){
+
+
         setName("name");
         setCompleteData(new Date());
     }
@@ -41,7 +45,10 @@ public abstract class TodoBase{
         TodoBase objToCompare=(TodoBase) obj;
         boolean nameIsEqual=objToCompare.getName().equals(getName());
         boolean dateIsEqual=objToCompare.getCompleteData().toString().equals(getCompleteData().toString());
-        return nameIsEqual&&dateIsEqual;
+        boolean typeIsEqual=type.equals(objToCompare.type);
+        return nameIsEqual && dateIsEqual && typeIsEqual;
+
+
     }
 }
 

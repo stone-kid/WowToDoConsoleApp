@@ -12,6 +12,7 @@ public class MythicDungeonTodo extends TodoBase{
         setChests(0);
         setMythicDificulty(0);
         setTime(Duration.ofMinutes(10));
+        type=TodoTypes.MythicDungeon;
 
 
     }
@@ -44,6 +45,6 @@ public class MythicDungeonTodo extends TodoBase{
 
     @Override
     public String toString() {
-        return super.toString()+ " "+getMythicDificulty()+" "+getName()+" "+getChests()+" "+getTime();
+        return super.toString()+ " "+getMythicDificulty()+" "+getChests()+" "+getTime();
     }
 }
