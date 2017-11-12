@@ -1,10 +1,12 @@
 package com.company;
 
 import java.util.Date;
+import java.util.UUID;
 
-public abstract class TodoBase{
+public abstract class TodoBase implements Cloneable{
     private String name;
     private Date completeData;
+    private String id;
 
     protected TodoTypes type;
 
@@ -13,6 +15,8 @@ public abstract class TodoBase{
 
         setName("name");
         setCompleteData(new Date());
+        id = (UUID.randomUUID().toString());
+
     }
 
 
@@ -50,6 +54,16 @@ public abstract class TodoBase{
 
 
     }
+
+    public String getId() {
+        return id;
+    }
+@Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+
 }
 
 
