@@ -25,10 +25,17 @@ public class ToDoRepository {
 
     }
 
-    public TodoBase FindTodo(String id) {
+    public void UpdateTodo(TodoBase todo) {
+
+        int index = todos.indexOf(todo);
+        todos.set(index, todo);
+
+    }
+
+    public TodoBase FindTodo(String id) throws CloneNotSupportedException {
         for (TodoBase todo : todos) {
             if (todo.getId().equals(id)) {
-                return todo;
+                return (TodoBase) todo.clone();
             }
         }
         return null;
@@ -36,8 +43,8 @@ public class ToDoRepository {
 
     public ArrayList<TodoBase> getTodos() throws CloneNotSupportedException {
 
-         ArrayList<TodoBase> clonedTodo = new ArrayList<>();
-        for (TodoBase todo : todos){
+        ArrayList<TodoBase> clonedTodo = new ArrayList<>();
+        for (TodoBase todo : todos) {
             clonedTodo.add((TodoBase) todo.clone());
         }
 
