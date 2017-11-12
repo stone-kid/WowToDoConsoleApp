@@ -19,7 +19,7 @@ public class ToDoRepository {
 
     }
 
-    public boolean RemoveTode(TodoBase todo) {
+    public boolean RemoveTodo(TodoBase todo) {
         boolean removeResult = todos.remove(todo);
         return removeResult;
 
